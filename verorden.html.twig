@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block body%}
+{% include 'menu.html.twig' %}
+{{ parent() }}
+{% block stylesheests %}
+{% endblock %}
+<br>
+<div class="divforms">
+<a class="divbotones" href="{{path ('orden')}}">Volver a Gestion de Ordenes</a>
+<br><br><br>
+  <fieldset >
+  <legend><h3>Orden de Mantenimiento --- Listado de Ordenes de Trabajo</h3></legend>
+<TABLE BORDER>
+	<TR>
+		<TH>NUMERO</TH> <TH>ESTADO</TH> <TH>TIPO</TH> <TH>ACTIVO PADRE</TH> <TH>ACTIVO HIJO</TH> <TH>DESCRIPCION</TH> <TH>CRITICIDAD</TH> <TH>INICIO PROGRAMADO</TH> <TH>FIN PROGRAMADO</TH> <TH>PLAN</TH> <TH>PRESUPUESTO ($)</TH>
+	</TR>
+{% for o in po %}
+	<TR>
+		<TD>{{ o.num }}</TD>
+		<TD>{{ o.estatus }}</TD>
+		<TD>{{ o.type }}</TD>
+		<TD>{{ o.padre }}</TD>
+		<TD>{{ o.hijo }}</TD>
+		<TD>{{ o.descr }}</TD>
+		<TD>{{ o.crit }}</TD>
+		<TD>{{ o.inicio }}</TD>
+		<TD>{{ o.fin }}</TD>
+		<TD>{{ o.plan }}</TD>
+		<TD>{{ o.costo }}</TD>
+	</TR>
+{% endfor %}
+</TABLE>	
+
+</fieldset>
+</div>
+{% endblock %}

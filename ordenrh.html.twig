@@ -1,0 +1,106 @@
+{% extends 'base.html.twig' %}
+
+{% block body%}
+{% include 'menu.html.twig' %}
+{{ parent() }}
+
+{% block stylesheests %}
+{% endblock %}
+<br>
+<div class="divforms">
+<a class="divbotones" href="{{path ('orden')}}">Volver a Gestion de Ordenes</a>
+<br><br><br>
+
+<fieldset>
+<legend><h3>Orden de Trabajo --- Nueva Orden – Asignar Tareas y Equipos de Trabajo</h3></legend>
+Orden N°
+<input type="text" size="10" name="ordennumero" id="ordennumero" value="{{ordennum.numero}}" readonly>
+Estado
+<input type="text" size="10" name="estado" id="estado" value="{{estado.descripcion}}" readonly>
+Tipo
+<input type="text" size="10" name="tipo" id="tipo" value="{{tipo.descripcion}}" readonly>
+<br>
+Activo Padre
+<input type="text" size="30" name="activop" id="activop" value="{{actp.nombre}}" readonly>
+Activo Hijo
+<input type="text" size="30" name="activoh" id="activoh" value="{{acth.nombre}}" readonly>
+Descripcion
+<input type="text" size="30" name="descripcion" id="descripcion" value="{{ordennum.descripcion}}" readonly>
+<fieldset>
+{#<legend><h4>Programa</h4></legend>
+Inicio Previsto
+<input type="date" name="inicio" id="inicio" value="{{ordennum.programainicio}}" readonly>
+Fin Previsto
+<input type="date" name="fin" id="fin" value="{{ordennum.programafin}}" readonly>
+</fieldset>
+#}</fieldset>
+<br>
+<br>
+<br>
+
+{{ form_start(form, {'action': path ('ordenrh'), 'method': 'POST'}) }}
+<fieldset>
+<legend>Carga de Tareas y Recursos Humanos</legend>
+
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspTareas&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspOperario&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspHoras<br>
+1&nbsp&nbsp
+{{ form_widget(form.tarea1) }}
+{{ form_widget(form.operario1) }}
+{{ form_widget(form.horas1) }}
+<br>
+2&nbsp&nbsp
+{{ form_widget(form.tarea2) }}
+{{ form_widget(form.operario2) }}
+{{ form_widget(form.horas2) }}
+<br>
+3&nbsp&nbsp
+{{ form_widget(form.tarea3) }}
+{{ form_widget(form.operario3) }}
+{{ form_widget(form.horas3) }}
+<br>
+4&nbsp&nbsp
+{{ form_widget(form.tarea4) }}
+{{ form_widget(form.operario4) }}
+{{ form_widget(form.horas4) }}
+<br>
+5&nbsp&nbsp
+{{ form_widget(form.tarea5) }}
+{{ form_widget(form.operario5) }}
+{{ form_widget(form.horas5) }}
+<br>
+6&nbsp&nbsp
+{{ form_widget(form.tarea6) }}
+{{ form_widget(form.operario6) }}
+{{ form_widget(form.horas6) }}
+<br>
+7&nbsp&nbsp
+{{ form_widget(form.tarea7) }}
+{{ form_widget(form.operario7) }}
+{{ form_widget(form.horas7) }}
+<br>
+8&nbsp&nbsp
+{{ form_widget(form.tarea8) }}
+{{ form_widget(form.operario8) }}
+{{ form_widget(form.horas8) }}
+<br>
+9&nbsp&nbsp
+{{ form_widget(form.tarea9) }}
+{{ form_widget(form.operario9) }}
+{{ form_widget(form.horas9) }}
+<br>
+10
+{{ form_widget(form.tarea10) }}
+{{ form_widget(form.operario10) }}
+{{ form_widget(form.horas10) }}
+<br>
+</fieldset>
+{{ form_end(form) }}
+{% for flash_message in app.session.flashbag.get('notice') %}
+    <div class="flash-notice">
+        {{ flash_message }}
+    </div>
+{% endfor %}
+</div>
+
+{% endblock %}
+

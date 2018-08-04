@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+{% block body%}
+{% include 'menu.html.twig' %}
+{{ parent() }}
+{% block stylesheests %}
+{% endblock %}
+<br>
+<div class="divforms">
+<a class="divbotones" href="{{path ('buscarplanm')}}">Nuevo Punto de Medicion</a>
+<br><br><br>
+
+<fieldset >
+<legend><h3>Plan de Mantenimiento --- Nuevo Plan -- Lanzamiento</h3></legend>
+Plan N°
+<input type="text" size="10" name="plannumero" id="plannumero" value="{{plannum.numero}}" readonly>
+Estado
+<input type="text" size="10" name="estado" id="estado" value="{{estado.descripcion}}" readonly>
+Titulo
+<input type="text" size="10" name="titulo" id="titulo" value="{{plannum.titulo}}" readonly>
+Tipo
+<input type="text" size="10" name="tipo" id="tipo" value="{{tipo.descripcion}}" readonly>
+Estrategia
+<input type="text" size="10" name="estrategia" id="estrategia" value="{{estrategia.descripcion}}" readonly>
+Salto
+<input type="text" size="10" name="salto" id="salto" value="{{plannum.salto}}" readonly>
+<br>
+Activo Padre
+<input type="text" size="30" name="activop" id="activop" value="{{actp.nombre}}" readonly>
+Activo Hijo
+<input type="text" size="30" name="activoh" id="activoh" value="{{acth.nombre}}" readonly>
+</fieldset>
+
+<fieldset>
+{{ form_start(form, {'action': path ('disparo'), 'method': 'POST'}) }}
+{{ form_widget(form) }}
+{{ form_end(form) }}
+</fieldset>
+{% for flash_message in app.session.flashbag.get('notice') %}
+    <div class="flash-notice">
+        {{ flash_message }}
+    </div>
+{% endfor %}
+</div>
+{% endblock %}

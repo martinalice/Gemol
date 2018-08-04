@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block body%}
+{{ parent() }}
+<h3>Bienvenido al primer sistema de gestión de mantenimiento On-Line!!!</h3>
+<br />
+<h4>Si Usted aun no cuenta con los servicios de acceso contratados <a href="#">haga click aqui </a> para solicitarlos</h4>
+<br />
+<h4>De lo contrario empieze ahora! a utilizar GeMOL</h4>
+<br />
+<h2>Inicio de sesion</h2> 
+<form name="form" id="form" action="{{ path('menu') }}" method="post">
+<label for="username">Username:</label>
+<input type="text" id="username" name="_username" value="" /><br>
+<label for="password">Password:</label>
+<input type="password" id="password" name="_password" /><br><br>
+<button type="submit">Inciciar Sesión</button>
+</form>
+{% endblock%}

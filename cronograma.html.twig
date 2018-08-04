@@ -1,0 +1,413 @@
+{% extends 'base.html.twig' %}
+{% block body%}
+{% include 'menu.html.twig' %}
+{{ parent() }}
+{% block stylesheests %}
+{% endblock %}
+<br>
+<div class="divforms">
+<a class="divbotones" href="{{path ('buscarpland')}}">Disparar Plan</a>
+<br><br><br>
+
+<fieldset >
+<legend><h3>Plan de Mantenimiento --- Nuevo Plan -- Cronograma</h3></legend>
+Plan N°
+<input type="text" size="10" name="plannumero" id="plannumero" value="{{plannum.numero}}" readonly>
+Estado
+<input type="text" size="10" name="estado" id="estado" value="{{estado.descripcion}}" readonly>
+Titulo
+<input type="text" size="10" name="titulo" id="titulo" value="{{plannum.titulo}}" readonly>
+Tipo
+<input type="text" size="10" name="tipo" id="tipo" value="{{tipo.descripcion}}" readonly>
+Estrategia
+<input type="text" size="10" name="estrategia" id="estrategia" value="{{estrategia.descripcion}}" readonly>
+Salto
+<input type="text" size="10" name="salto" id="salto" value="{{plannum.salto}}" readonly>
+<br>
+Activo Padre
+<input type="text" size="30" name="activop" id="activop" value="{{actp.nombre}}" readonly>
+Activo Hijo
+<input type="text" size="30" name="activoh" id="activoh" value="{{acth.nombre}}" readonly>
+</fieldset>
+
+{{ form_start(form, {'action': path ('cronograma'), 'method': 'POST'}) }}
+
+<div class="col1">
+Tareas&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspCronograma</p>
+</div>
+
+<TABLE BORDER class="grilla">
+<TR>
+	<TH></th>
+	<TH>{{plannum.salto * 1}}</TH>
+	<TH>{{plannum.salto * 2}}</TH>
+	<TH>{{plannum.salto * 3}}</TH>
+	<TH>{{plannum.salto * 4}}</TH>
+	<TH>{{plannum.salto * 5}}</TH>
+	<TH>{{plannum.salto * 6}}</TH>
+	<TH>{{plannum.salto * 7}}</TH>
+	<TH>{{plannum.salto * 8}}</TH>
+	<TH>{{plannum.salto * 9}}</TH>
+	<TH>{{plannum.salto * 10}}</TH>
+	<TH>{{plannum.salto * 11}}</TH>
+	<TH>{{plannum.salto * 12}}</TH>
+	<TH>{{plannum.salto * 13}}</TH>
+	<TH>{{plannum.salto * 14}}</TH>
+	<TH>{{plannum.salto * 15}}</TH>
+	<TH>{{plannum.salto * 16}}</TH>
+	<TH>{{plannum.salto * 17}}</TH>
+	<TH>{{plannum.salto * 18}}</TH>
+	<TH>{{plannum.salto * 19}}</TH>
+	<TH>{{plannum.salto * 20}}</TH>
+	<TH>{{plannum.salto * 21}}</TH>
+	<TH>{{plannum.salto * 22}}</TH>
+	<TH>{{plannum.salto * 23}}</TH>
+	<TH>{{plannum.salto * 24}}</TH>
+	<TH>{{plannum.salto * 25}}</TH>
+	<TH>{{plannum.salto * 26}}</TH>
+	<TH>{{plannum.salto * 27}}</TH>
+	<TH>{{plannum.salto * 28}}</TH>
+	<TH>{{plannum.salto * 29}}</TH>
+	<TH>{{plannum.salto * 30}}</TH>
+</TR>
+<TR>
+	<TH>{{ form_widget(form.tarea1) }}</TH>
+	<TH>{{ form_widget(form.11) }}</TH>
+	<TH>{{ form_widget(form.12) }}</TH>
+	<TH>{{ form_widget(form.13) }}</TH>
+	<TH>{{ form_widget(form.14) }}</TH>
+	<TH>{{ form_widget(form.15) }}</TH>
+	<TH>{{ form_widget(form.16) }}</TH>
+	<TH>{{ form_widget(form.17) }}</TH>
+	<TH>{{ form_widget(form.18) }}</TH>
+	<TH>{{ form_widget(form.19) }}</TH>
+	<TH>{{ form_widget(form.110) }}</TH>
+	<TH>{{ form_widget(form.111) }}</TH>
+	<TH>{{ form_widget(form.112) }}</TH>
+	<TH>{{ form_widget(form.113) }}</TH>
+	<TH>{{ form_widget(form.114) }}</TH>
+	<TH>{{ form_widget(form.115) }}</TH>
+	<TH>{{ form_widget(form.116) }}</TH>
+	<TH>{{ form_widget(form.117) }}</TH>
+	<TH>{{ form_widget(form.118) }}</TH>
+	<TH>{{ form_widget(form.119) }}</TH>
+	<TH>{{ form_widget(form.120) }}</TH>
+	<TH>{{ form_widget(form.121) }}</TH>
+	<TH>{{ form_widget(form.122) }}</TH>
+	<TH>{{ form_widget(form.123) }}</TH>
+	<TH>{{ form_widget(form.124) }}</TH>
+	<TH>{{ form_widget(form.125) }}</TH>
+	<TH>{{ form_widget(form.126) }}</TH>
+	<TH>{{ form_widget(form.127) }}</TH>
+	<TH>{{ form_widget(form.128) }}</TH>
+	<TH>{{ form_widget(form.129) }}</TH>
+	<TH>{{ form_widget(form.130) }}</TH>
+</TR>
+<TR>
+	<TH>{{ form_widget(form.tarea2) }}</TH>
+	<TH>{{ form_widget(form.21) }}</TH>
+	<TH>{{ form_widget(form.22) }}</TH>
+	<TH>{{ form_widget(form.23) }}</TH>
+	<TH>{{ form_widget(form.24) }}</TH>
+	<TH>{{ form_widget(form.25) }}</TH>
+	<TH>{{ form_widget(form.26) }}</TH>
+	<TH>{{ form_widget(form.27) }}</TH>
+	<TH>{{ form_widget(form.28) }}</TH>
+	<TH>{{ form_widget(form.29) }}</TH>
+	<TH>{{ form_widget(form.210) }}</TH>
+	<TH>{{ form_widget(form.211) }}</TH>
+	<TH>{{ form_widget(form.212) }}</TH>
+	<TH>{{ form_widget(form.213) }}</TH>
+	<TH>{{ form_widget(form.214) }}</TH>
+	<TH>{{ form_widget(form.215) }}</TH>
+	<TH>{{ form_widget(form.216) }}</TH>
+	<TH>{{ form_widget(form.217) }}</TH>
+	<TH>{{ form_widget(form.218) }}</TH>
+	<TH>{{ form_widget(form.219) }}</TH>
+	<TH>{{ form_widget(form.220) }}</TH>
+	<TH>{{ form_widget(form.221) }}</TH>
+	<TH>{{ form_widget(form.222) }}</TH>
+	<TH>{{ form_widget(form.223) }}</TH>
+	<TH>{{ form_widget(form.224) }}</TH>
+	<TH>{{ form_widget(form.225) }}</TH>
+	<TH>{{ form_widget(form.226) }}</TH>
+	<TH>{{ form_widget(form.227) }}</TH>
+	<TH>{{ form_widget(form.228) }}</TH>
+	<TH>{{ form_widget(form.229) }}</TH>
+	<TH>{{ form_widget(form.230) }}</TH>
+</TR>
+<TR>
+	<TH>{{ form_widget(form.tarea3) }}</TH>
+	<TH>{{ form_widget(form.31) }}</TH>
+	<TH>{{ form_widget(form.32) }}</TH>
+	<TH>{{ form_widget(form.33) }}</TH>
+	<TH>{{ form_widget(form.34) }}</TH>
+	<TH>{{ form_widget(form.35) }}</TH>
+	<TH>{{ form_widget(form.36) }}</TH>
+	<TH>{{ form_widget(form.37) }}</TH>
+	<TH>{{ form_widget(form.38) }}</TH>
+	<TH>{{ form_widget(form.39) }}</TH>
+	<TH>{{ form_widget(form.310) }}</TH>
+	<TH>{{ form_widget(form.311) }}</TH>
+	<TH>{{ form_widget(form.312) }}</TH>
+	<TH>{{ form_widget(form.313) }}</TH>
+	<TH>{{ form_widget(form.314) }}</TH>
+	<TH>{{ form_widget(form.315) }}</TH>
+	<TH>{{ form_widget(form.316) }}</TH>
+	<TH>{{ form_widget(form.317) }}</TH>
+	<TH>{{ form_widget(form.318) }}</TH>
+	<TH>{{ form_widget(form.319) }}</TH>
+	<TH>{{ form_widget(form.320) }}</TH>
+	<TH>{{ form_widget(form.321) }}</TH>
+	<TH>{{ form_widget(form.322) }}</TH>
+	<TH>{{ form_widget(form.323) }}</TH>
+	<TH>{{ form_widget(form.324) }}</TH>
+	<TH>{{ form_widget(form.325) }}</TH>
+	<TH>{{ form_widget(form.326) }}</TH>
+	<TH>{{ form_widget(form.327) }}</TH>
+	<TH>{{ form_widget(form.328) }}</TH>
+	<TH>{{ form_widget(form.329) }}</TH>
+	<TH>{{ form_widget(form.330) }}</TH>
+</TR>
+<TR>
+	<TH>{{ form_widget(form.tarea4) }}</TH>
+	<TH>{{ form_widget(form.41) }}</TH>
+	<TH>{{ form_widget(form.42) }}</TH>
+	<TH>{{ form_widget(form.43) }}</TH>
+	<TH>{{ form_widget(form.44) }}</TH>
+	<TH>{{ form_widget(form.45) }}</TH>
+	<TH>{{ form_widget(form.46) }}</TH>
+	<TH>{{ form_widget(form.47) }}</TH>
+	<TH>{{ form_widget(form.48) }}</TH>
+	<TH>{{ form_widget(form.49) }}</TH>
+	<TH>{{ form_widget(form.410) }}</TH>
+	<TH>{{ form_widget(form.411) }}</TH>
+	<TH>{{ form_widget(form.412) }}</TH>
+	<TH>{{ form_widget(form.413) }}</TH>
+	<TH>{{ form_widget(form.414) }}</TH>
+	<TH>{{ form_widget(form.415) }}</TH>
+	<TH>{{ form_widget(form.416) }}</TH>
+	<TH>{{ form_widget(form.417) }}</TH>
+	<TH>{{ form_widget(form.418) }}</TH>
+	<TH>{{ form_widget(form.419) }}</TH>
+	<TH>{{ form_widget(form.420) }}</TH>
+	<TH>{{ form_widget(form.421) }}</TH>
+	<TH>{{ form_widget(form.422) }}</TH>
+	<TH>{{ form_widget(form.423) }}</TH>
+	<TH>{{ form_widget(form.424) }}</TH>
+	<TH>{{ form_widget(form.425) }}</TH>
+	<TH>{{ form_widget(form.426) }}</TH>
+	<TH>{{ form_widget(form.427) }}</TH>
+	<TH>{{ form_widget(form.428) }}</TH>
+	<TH>{{ form_widget(form.429) }}</TH>
+	<TH>{{ form_widget(form.430) }}</TH>
+</TR>
+<TR>
+	<TH>{{ form_widget(form.tarea5) }}</TH>
+	<TH>{{ form_widget(form.51) }}</TH>
+	<TH>{{ form_widget(form.52) }}</TH>
+	<TH>{{ form_widget(form.53) }}</TH>
+	<TH>{{ form_widget(form.54) }}</TH>
+	<TH>{{ form_widget(form.55) }}</TH>
+	<TH>{{ form_widget(form.56) }}</TH>
+	<TH>{{ form_widget(form.57) }}</TH>
+	<TH>{{ form_widget(form.58) }}</TH>
+	<TH>{{ form_widget(form.59) }}</TH>
+	<TH>{{ form_widget(form.510) }}</TH>
+	<TH>{{ form_widget(form.511) }}</TH>
+	<TH>{{ form_widget(form.512) }}</TH>
+	<TH>{{ form_widget(form.513) }}</TH>
+	<TH>{{ form_widget(form.514) }}</TH>
+	<TH>{{ form_widget(form.515) }}</TH>
+	<TH>{{ form_widget(form.516) }}</TH>
+	<TH>{{ form_widget(form.517) }}</TH>
+	<TH>{{ form_widget(form.518) }}</TH>
+	<TH>{{ form_widget(form.519) }}</TH>
+	<TH>{{ form_widget(form.520) }}</TH>
+	<TH>{{ form_widget(form.521) }}</TH>
+	<TH>{{ form_widget(form.522) }}</TH>
+	<TH>{{ form_widget(form.523) }}</TH>
+	<TH>{{ form_widget(form.524) }}</TH>
+	<TH>{{ form_widget(form.525) }}</TH>
+	<TH>{{ form_widget(form.526) }}</TH>
+	<TH>{{ form_widget(form.527) }}</TH>
+	<TH>{{ form_widget(form.528) }}</TH>
+	<TH>{{ form_widget(form.529) }}</TH>
+	<TH>{{ form_widget(form.530) }}</TH>
+</TR>
+<TR>
+	<TH>{{ form_widget(form.tarea6) }}</TH>
+	<TH>{{ form_widget(form.61) }}</TH>
+	<TH>{{ form_widget(form.62) }}</TH>
+	<TH>{{ form_widget(form.63) }}</TH>
+	<TH>{{ form_widget(form.64) }}</TH>
+	<TH>{{ form_widget(form.65) }}</TH>
+	<TH>{{ form_widget(form.66) }}</TH>
+	<TH>{{ form_widget(form.67) }}</TH>
+	<TH>{{ form_widget(form.68) }}</TH>
+	<TH>{{ form_widget(form.69) }}</TH>
+	<TH>{{ form_widget(form.610) }}</TH>
+	<TH>{{ form_widget(form.611) }}</TH>
+	<TH>{{ form_widget(form.612) }}</TH>
+	<TH>{{ form_widget(form.613) }}</TH>
+	<TH>{{ form_widget(form.614) }}</TH>
+	<TH>{{ form_widget(form.615) }}</TH>
+	<TH>{{ form_widget(form.616) }}</TH>
+	<TH>{{ form_widget(form.617) }}</TH>
+	<TH>{{ form_widget(form.618) }}</TH>
+	<TH>{{ form_widget(form.619) }}</TH>
+	<TH>{{ form_widget(form.620) }}</TH>
+	<TH>{{ form_widget(form.621) }}</TH>
+	<TH>{{ form_widget(form.622) }}</TH>
+	<TH>{{ form_widget(form.623) }}</TH>
+	<TH>{{ form_widget(form.624) }}</TH>
+	<TH>{{ form_widget(form.625) }}</TH>
+	<TH>{{ form_widget(form.626) }}</TH>
+	<TH>{{ form_widget(form.627) }}</TH>
+	<TH>{{ form_widget(form.628) }}</TH>
+	<TH>{{ form_widget(form.629) }}</TH>
+	<TH>{{ form_widget(form.630) }}</TH>
+</TR>
+<TR>
+	<TH>{{ form_widget(form.tarea7) }}</TH>
+	<TH>{{ form_widget(form.71) }}</TH>
+	<TH>{{ form_widget(form.72) }}</TH>
+	<TH>{{ form_widget(form.73) }}</TH>
+	<TH>{{ form_widget(form.74) }}</TH>
+	<TH>{{ form_widget(form.75) }}</TH>
+	<TH>{{ form_widget(form.76) }}</TH>
+	<TH>{{ form_widget(form.77) }}</TH>
+	<TH>{{ form_widget(form.78) }}</TH>
+	<TH>{{ form_widget(form.79) }}</TH>
+	<TH>{{ form_widget(form.710) }}</TH>
+	<TH>{{ form_widget(form.711) }}</TH>
+	<TH>{{ form_widget(form.712) }}</TH>
+	<TH>{{ form_widget(form.713) }}</TH>
+	<TH>{{ form_widget(form.714) }}</TH>
+	<TH>{{ form_widget(form.715) }}</TH>
+	<TH>{{ form_widget(form.716) }}</TH>
+	<TH>{{ form_widget(form.717) }}</TH>
+	<TH>{{ form_widget(form.718) }}</TH>
+	<TH>{{ form_widget(form.719) }}</TH>
+	<TH>{{ form_widget(form.720) }}</TH>
+	<TH>{{ form_widget(form.721) }}</TH>
+	<TH>{{ form_widget(form.722) }}</TH>
+	<TH>{{ form_widget(form.723) }}</TH>
+	<TH>{{ form_widget(form.724) }}</TH>
+	<TH>{{ form_widget(form.725) }}</TH>
+	<TH>{{ form_widget(form.726) }}</TH>
+	<TH>{{ form_widget(form.727) }}</TH>
+	<TH>{{ form_widget(form.728) }}</TH>
+	<TH>{{ form_widget(form.729) }}</TH>
+	<TH>{{ form_widget(form.730) }}</TH>
+</TR>
+<TR>
+	<TH>{{ form_widget(form.tarea8) }}</TH>
+	<TH>{{ form_widget(form.81) }}</TH>
+	<TH>{{ form_widget(form.82) }}</TH>
+	<TH>{{ form_widget(form.83) }}</TH>
+	<TH>{{ form_widget(form.84) }}</TH>
+	<TH>{{ form_widget(form.85) }}</TH>
+	<TH>{{ form_widget(form.86) }}</TH>
+	<TH>{{ form_widget(form.87) }}</TH>
+	<TH>{{ form_widget(form.88) }}</TH>
+	<TH>{{ form_widget(form.89) }}</TH>
+	<TH>{{ form_widget(form.810) }}</TH>
+	<TH>{{ form_widget(form.811) }}</TH>
+	<TH>{{ form_widget(form.812) }}</TH>
+	<TH>{{ form_widget(form.813) }}</TH>
+	<TH>{{ form_widget(form.814) }}</TH>
+	<TH>{{ form_widget(form.815) }}</TH>
+	<TH>{{ form_widget(form.816) }}</TH>
+	<TH>{{ form_widget(form.817) }}</TH>
+	<TH>{{ form_widget(form.818) }}</TH>
+	<TH>{{ form_widget(form.819) }}</TH>
+	<TH>{{ form_widget(form.820) }}</TH>
+	<TH>{{ form_widget(form.821) }}</TH>
+	<TH>{{ form_widget(form.822) }}</TH>
+	<TH>{{ form_widget(form.823) }}</TH>
+	<TH>{{ form_widget(form.824) }}</TH>
+	<TH>{{ form_widget(form.825) }}</TH>
+	<TH>{{ form_widget(form.826) }}</TH>
+	<TH>{{ form_widget(form.827) }}</TH>
+	<TH>{{ form_widget(form.828) }}</TH>
+	<TH>{{ form_widget(form.829) }}</TH>
+	<TH>{{ form_widget(form.830) }}</TH>
+</TR>
+<TR>
+	<TH>{{ form_widget(form.tarea9) }}</TH>
+	<TH>{{ form_widget(form.91) }}</TH>
+	<TH>{{ form_widget(form.92) }}</TH>
+	<TH>{{ form_widget(form.93) }}</TH>
+	<TH>{{ form_widget(form.94) }}</TH>
+	<TH>{{ form_widget(form.95) }}</TH>
+	<TH>{{ form_widget(form.96) }}</TH>
+	<TH>{{ form_widget(form.97) }}</TH>
+	<TH>{{ form_widget(form.98) }}</TH>
+	<TH>{{ form_widget(form.99) }}</TH>
+	<TH>{{ form_widget(form.910) }}</TH>
+	<TH>{{ form_widget(form.911) }}</TH>
+	<TH>{{ form_widget(form.912) }}</TH>
+	<TH>{{ form_widget(form.913) }}</TH>
+	<TH>{{ form_widget(form.914) }}</TH>
+	<TH>{{ form_widget(form.915) }}</TH>
+	<TH>{{ form_widget(form.916) }}</TH>
+	<TH>{{ form_widget(form.917) }}</TH>
+	<TH>{{ form_widget(form.918) }}</TH>
+	<TH>{{ form_widget(form.919) }}</TH>
+	<TH>{{ form_widget(form.920) }}</TH>
+	<TH>{{ form_widget(form.921) }}</TH>
+	<TH>{{ form_widget(form.922) }}</TH>
+	<TH>{{ form_widget(form.923) }}</TH>
+	<TH>{{ form_widget(form.924) }}</TH>
+	<TH>{{ form_widget(form.925) }}</TH>
+	<TH>{{ form_widget(form.926) }}</TH>
+	<TH>{{ form_widget(form.927) }}</TH>
+	<TH>{{ form_widget(form.928) }}</TH>
+	<TH>{{ form_widget(form.929) }}</TH>
+	<TH>{{ form_widget(form.930) }}</TH>
+</TR>
+<TR>
+	<TH>{{ form_widget(form.tarea10) }}</TH>
+	<TH>{{ form_widget(form.101) }}</TH>
+	<TH>{{ form_widget(form.102) }}</TH>
+	<TH>{{ form_widget(form.103) }}</TH>
+	<TH>{{ form_widget(form.104) }}</TH>
+	<TH>{{ form_widget(form.105) }}</TH>
+	<TH>{{ form_widget(form.106) }}</TH>
+	<TH>{{ form_widget(form.107) }}</TH>
+	<TH>{{ form_widget(form.108) }}</TH>
+	<TH>{{ form_widget(form.109) }}</TH>
+	<TH>{{ form_widget(form.1010) }}</TH>
+	<TH>{{ form_widget(form.1011) }}</TH>
+	<TH>{{ form_widget(form.1012) }}</TH>
+	<TH>{{ form_widget(form.1013) }}</TH>
+	<TH>{{ form_widget(form.1014) }}</TH>
+	<TH>{{ form_widget(form.1015) }}</TH>
+	<TH>{{ form_widget(form.1016) }}</TH>
+	<TH>{{ form_widget(form.1017) }}</TH>
+	<TH>{{ form_widget(form.1018) }}</TH>
+	<TH>{{ form_widget(form.1019) }}</TH>
+	<TH>{{ form_widget(form.1020) }}</TH>
+	<TH>{{ form_widget(form.1021) }}</TH>
+	<TH>{{ form_widget(form.1022) }}</TH>
+	<TH>{{ form_widget(form.1023) }}</TH>
+	<TH>{{ form_widget(form.1024) }}</TH>
+	<TH>{{ form_widget(form.1025) }}</TH>
+	<TH>{{ form_widget(form.1026) }}</TH>
+	<TH>{{ form_widget(form.1027) }}</TH>
+	<TH>{{ form_widget(form.1028) }}</TH>
+	<TH>{{ form_widget(form.1029) }}</TH>
+	<TH>{{ form_widget(form.1030) }}</TH>
+</TR>
+</TABLE>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+{{ form_widget(form.guardar) }}
+{{ form_end(form) }}
+{% for flash_message in app.session.flashbag.get('notice') %}
+    <div class="flash-notice">
+        {{ flash_message }}
+    </div>
+{% endfor %}
+</div>
+{% endblock %}

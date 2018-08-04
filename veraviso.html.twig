@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block body%}
+{% include 'menu.html.twig' %}
+{{ parent() }}
+{% block stylesheests %}
+{% endblock %}
+<br>
+<div class="divforms">
+<a class="divbotones" href="{{path ('aviso')}}">Volver a Crear un Aviso</a>
+<br><br><br>
+  <fieldset >
+  <legend><h3>Aviso de Mantenimiento --- Listado de Avisos de Mantenimiento</h3></legend>
+<TABLE BORDER>
+	<TR>
+		<TH>NUMERO</TH> <TH>ESTADO</TH> <TH>ACTIVO PADRE</TH> <TH>ACTIVO HIJO</TH> <TH>DESCRIPCION</TH> <TH>CRITICIDAD</TH> <TH>PLAN</TH>
+	</TR>
+{% for a in po %}
+	<TR>
+		<TD>{{ a.num }}</TD>
+		<TD>{{ a.estatus }}</TD>
+		<TD>{{ a.padre }}</TD>
+		<TD>{{ a.hijo }}</TD>
+		<TD>{{ a.descr }}</TD>
+		<TD>{{ a.crit }}</TD>
+		<TD>{{ a.plan }}</TD>
+	</TR>
+{% endfor %}
+</TABLE>	
+
+</fieldset>
+</div>
+{% endblock %}

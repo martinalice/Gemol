@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body%}
+{{ parent() }}
+
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<div align="center">
+ <a class="botonmenu" href="{{ path('aviso') }}">Gestión de Avisos de Mantenimiento</a><br><br><br><br>
+  <a class="botonmenu" href="{{ path('orden') }}">Gestión de Ordenes de Trabajo</a><br><br><br><br>
+  <a class="botonmenu" href="{{ path('plan') }}">Planificiación de Mantenimiento</a><br><br><br><br>
+  <a class="botonmenu" href="{{ path('buscarpland') }}">Lanzamiento de Plan</a><br><br><br>
+  <a class="botonmenu" href="{{ path('buscarplanm') }}">Puntos de Medición</a><br><br><br>
+  <a class="botonmenu" href="{{ path('menu') }}">Gestión de Activos y Recursos</a><br><br><br>
+  <a class="cerrar" href="{{ path('index')}}">Salir</a>
+</div>
+{% endblock %}

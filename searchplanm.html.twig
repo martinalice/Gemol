@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block body%}
+{% include 'menu.html.twig' %}
+{{ parent() }}
+{% block stylesheests %}
+{% endblock %}
+<br>
+<div class="divforms">
+<a class="divbotones" href="{{path ('plan')}}">Crear Plan</a>
+<br><br><br>
+
+  <fieldset >
+  <legend><h3>Plan de Mantenimiento --- Buscar Plan -- Punto de Medicion</h3></legend>
+    {{ form_start(form, {'action': path ('buscarplanm'), 'method': 'POST'}) }}
+      Planes Activos
+<select name='numero' id='numero'>
+{% for num in datosplan %}
+<option value="{{num.numero}}">{{num.numero}} - {{num.titulo}}</option>
+{% endfor %}
+</select>
+</fieldset>
+      {{ form_widget(form.medicion)}}
+    {{ form_end(form) }}
+</div>
+{% endblock %}

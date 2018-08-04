@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block body%}
+{% include 'menu.html.twig' %}
+{{ parent() }}
+{% block stylesheests %}
+{% endblock %}
+<br>
+<div class="divforms">
+<a class="divbotones" href="{{path ('buscarpland')}}">Disparar Plan</a>
+<a class="divbotones" href="{{path ('buscarplanm')}}">Crear Punto de Medicion</a>
+<br><br><br>
+  <fieldset >
+  <legend><h3>Plan de Mantenimiento --- Nuevo Plan</h3></legend>
+    {{ form_start(form, {'action': path ('plan'), 'method': 'POST'}) }}
+      Plan N°
+      <input type="text" size="15" name="plannumero" id="plannumero" value="{{plannum.numero + 1}}" readonly>
+      <br>
+      Estado
+      {{ form_widget(form.estado) }}
+      <br>
+      Titulo
+      {{ form_widget(form.titulo) }}
+      <br>
+      Tipo
+      {{ form_widget(form.tipo) }}
+      <br>
+      Estrategia
+      {{ form_widget(form.estrategia) }}
+      <br>
+      Salto
+      {{ form_widget(form.salto) }}
+      <br>
+Activo Padre
+<select name=activopadre>
+{% for p in padres %}
+<option value="{{ p.numero }}">{{ p.nombre }} - {{ p.marca }} - {{ p.serie }}</option>
+{% endfor %}
+</select>
+<br>
+Activo Hijo
+<select name=activohijo>
+{% for h in hijos %}
+<option value="{{ h.numero }}">{{ h.nombre }} - {{ h.marca }} - {{ h.serie }}</option>
+{% endfor %}
+</select>
+{{ form_end(form) }}
+</div>
+{% endblock %}

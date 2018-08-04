@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block body%}
+{% include 'menu.html.twig' %}
+{{ parent() }}
+
+{% block stylesheests %}
+{% endblock %}
+<div class="divforms">
+<a class="divbotones" href="{{path ('verorden')}}">Ver listado de Ordenes</a>
+<br><br><br>
+<fieldset>
+<legend><h3>Orden de Trabajo -- Nueva Orden</h3></legend>
+    {{ form_start(form, {'action': path ('orden'), 'method': 'POST'}) }}
+Orden N°
+<input type="text" size="15" name="ordennumero" id="ordennumero" value="{{ordennum.numero + 1}}" readonly>
+  <br>
+Estado
+      {{ form_widget(form.estado) }}
+<br>
+Tipo
+      {{ form_widget(form.tipo) }}
+<br>
+Activo Padre
+<select name=activopadre>
+{% for p in padres %}
+<option value="{{ p.numero }}">{{ p.nombre }} - {{ p.marca }} - {{ p.serie }}</option>
+{% endfor %}
+</select>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+Aviso asociado
+<select name="aviso" id="aviso">
+<option value="0">Ninguno</option>
+{% for a in aviso %}
+<option value="{{ a.numero }}">{{ a.numero }} - {{ a.descripcion }}</option>
+{% endfor %}
+</select>
+<br>
+Activo Hijo
+<select name=activohijo>
+{% for h in hijos %}
+<option value="{{ h.numero }}">{{ h.nombre }} - {{ h.marca }} - {{ h.serie }}</option>
+{% endfor %}
+</select>
+<br>
+Descripcion
+      {{ form_widget(form.descripcion) }}
+	{# <textarea name="ordendescripcion" id="ordendescripcion" size="300" maxlength="300"></textarea>#}
+<br>
+Criticidad
+      {{ form_widget(form.criticidad) }}
+<fieldset>
+<legend><h4>Programa</h4></legend>
+Inicio Previsto
+      {{ form_widget(form.programainicio) }}
+<br>
+Fin Previsto
+      {{ form_widget(form.programafin) }}
+<br>
+</fieldset>
+</fieldset>
+    {{ form_end(form) }}
+{% for flash_message in app.session.flashbag.get('notice') %}
+    <div class="flash-notice">
+        {{ flash_message }}
+    </div>
+{% endfor %}
+</div>
+{% endblock %}
+

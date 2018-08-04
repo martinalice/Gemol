@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+{% block title %}Grupos de trabajo{% endblock %}<fieldset>
+{% block body%}
+{% include 'menu.html.twig' %}
+{{ parent() }}
+<br>
+<div class="divforms">
+<br><br><br>
+<fieldset>
+<legend>Regristracion de Equipos de Trabajo</legend>
+Nombre y Apellido
+<input type="text" size="30" name="nombreyapellido" id="nombreyapellido" maxlength="200">
+<br>
+<br>
+Categoria<select name="categoria" id="categoria">
+<option value="electrico">Eléctrico</option>
+<option value="mecanico">Mecanico</option>
+<option value="ayudante">Ayudante</option>
+<option value="otro">Otros</option>
+</select><br><br>
+Costo hora hombre<input type="number" name="costohh" size="1" id="costohh" min="0" max="100000">
+<br>
+<br>
+<input type="submit" id="guardar" value="Guardar">
+<input type="button" name="modificarequipos" value="Modificar un Equipo">
+</fieldset>
+</div>
+{% endblock %}

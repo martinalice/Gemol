@@ -1,0 +1,68 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+plan:
+  path: /plan
+  controller: App\Controller\PlanifController::nuevoPlan
+
+cronograma:
+  path: /cronograma
+  controller: App\Controller\CronogramaController::nuevoCronograma
+
+orden:
+  path: /orden
+  controller: App\Controller\OrdenController::nuevoOrden
+
+ordenrm:
+  path: /ordenrm
+  controller: App\Controller\OrdenrmController::nuevoOrdenrm
+
+ordenrh:
+  path: /ordenrh
+  controller: App\Controller\OrdenrhController::nuevoOrdenrh
+
+verorden:
+  path: /verorden
+  controller: App\Controller\VerOrdenController::verOrden
+
+index:
+  path: /index
+  controller: App\Controller\LoginController::login
+
+buscarplanm:
+  path: /buscarplanm
+  controller: App\Controller\SearchPlanMedicion:buscarplanm
+
+buscarpland:
+  path: /buscarpland
+  controller: App\Controller\SearchPlanDisparo:buscarpland
+
+medicion:
+  path: /medicion
+  controller: App\Controller\MedicionController::nuevoMedicion
+
+aviso:
+  path: /aviso
+  controller: App\Controller\AvisoController::nuevoAviso
+
+veraviso:
+  path: /veraviso
+  controller: App\Controller\VerAvisoController::verAviso
+
+equipo:
+  path: /equipo
+  controller: App\Controller\EquipoController::nuevoEquipo
+
+equipo_de_trabajo:
+  path: /equipo_de_trabajo
+  controller: App\Controller\EquipodetrabajoController::nuevoEquipodetrabajo
+
+disparo:
+  path: /disparo
+  controller: App\Controller\DisparoController::nuevoDisparo
+
+menu:
+  path: /menu
+  controller: App\Controller\MenuController::menu
+

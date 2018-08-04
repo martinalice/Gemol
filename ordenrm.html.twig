@@ -1,0 +1,102 @@
+{% extends 'base.html.twig' %}
+
+{% block body%}
+{% include 'menu.html.twig' %}
+{{ parent() }}
+
+{% block stylesheests %}
+{% endblock %}
+<br>
+<div class="divforms">
+<a class="divbotones" href="{{path ('orden')}}">Volver a Gestion de Ordenes</a>
+<br><br><br>
+
+
+<fieldset>
+<legend><h3>Orden de Trabajo --- Nueva Orden – Asignar Recursos Materiales</h3></legend>
+Orden N°
+<input type="text" size="10" name="ordennumero" id="ordennumero" value="{{ordennum.numero}}" readonly>
+Estado
+<input type="text" size="10" name="estado" id="estado" value="{{estado.descripcion}}" readonly>
+Tipo
+<input type="text" size="10" name="tipo" id="tipo" value="{{tipo.descripcion}}" readonly>
+<br>
+Activo Padre
+<input type="text" size="30" name="activop" id="activop" value="{{actp.nombre}}" readonly>
+Activo Hijo
+<input type="text" size="30" name="activoh" id="activoh" value="{{acth.nombre}}" readonly>
+Descripcion
+<input type="text" size="30" name="descripcion" id="descripcion" value="{{ordennum.descripcion}}" readonly>
+<fieldset>
+{#
+<legend><h4>Programa</h4></legend>
+Inicio Previsto
+<input type="date" name="inicio" id="inicio" value="{{ordennum.programainicio}}" readonly>
+Fin Previsto
+<input type="date" name="fin" id="fin" value="{{ordennum.programafin}}" readonly>
+</fieldset>
+#}</fieldset>
+<br>
+<br>
+<br>
+
+{{ form_start(form, {'action': path ('ordenrm'), 'method': 'POST'}) }}
+<fieldset>
+<legend>Carga de Materiales</legend>
+
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspMaterial&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspCantidad&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspCosto<br>
+1&nbsp&nbsp
+{{ form_widget(form.material1) }}
+{{ form_widget(form.cantidad1) }}
+{{ form_widget(form.costo1) }}
+<br>
+2&nbsp&nbsp
+{{ form_widget(form.material2) }}
+{{ form_widget(form.cantidad2) }}
+{{ form_widget(form.costo2) }}
+<br>
+3&nbsp&nbsp
+{{ form_widget(form.material3) }}
+{{ form_widget(form.cantidad3) }}
+{{ form_widget(form.costo3) }}
+<br>
+4&nbsp&nbsp
+{{ form_widget(form.material4) }}
+{{ form_widget(form.cantidad4) }}
+{{ form_widget(form.costo4) }}
+<br>
+5&nbsp&nbsp
+{{ form_widget(form.material5) }}
+{{ form_widget(form.cantidad5) }}
+{{ form_widget(form.costo5) }}
+<br>
+6&nbsp&nbsp
+{{ form_widget(form.material6) }}
+{{ form_widget(form.cantidad6) }}
+{{ form_widget(form.costo6) }}
+<br>
+7&nbsp&nbsp
+{{ form_widget(form.material7) }}
+{{ form_widget(form.cantidad7) }}
+{{ form_widget(form.costo7) }}
+<br>
+8&nbsp&nbsp
+{{ form_widget(form.material8) }}
+{{ form_widget(form.cantidad8) }}
+{{ form_widget(form.costo8) }}
+<br>
+9&nbsp&nbsp
+{{ form_widget(form.material9) }}
+{{ form_widget(form.cantidad9) }}
+{{ form_widget(form.costo9) }}
+<br>
+10
+{{ form_widget(form.material10) }}
+{{ form_widget(form.cantidad10) }}
+{{ form_widget(form.costo10) }}
+<br>
+</fieldset>
+{{ form_end(form) }}
+</div>
+{% endblock %}
+

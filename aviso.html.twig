@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+{% block title %}Aviso de Mantenimiento{% endblock %}
+{% block body%}
+{% include 'menu.html.twig' %}
+{{ parent() }}
+{% block stylesheests %}
+{% endblock %}
+<br>
+<div class="divforms">
+<a class="divbotones" href="{{path ('veraviso')}}">Ver Avisos</a>
+<br><br><br>
+<fieldset>
+<legend><h3>Aviso de Mantenimiento</h3></legend>
+{{ form_start(form, {'action': path ('aviso'), 'method': 'POST'}) }}
+Activo Padre
+<select name=activopadre>
+{% for p in padres %}
+<option value="{{ p.numero }}">{{ p.nombre }} - {{ p.marca }} - {{ p.serie }}</option>
+{% endfor %}
+</select>
+<br>
+Activo Hijo
+<select name=activohijo>
+{% for h in hijos %}
+<option value="{{ h.numero }}">{{ h.nombre }} - {{ h.marca }} - {{ h.serie }}</option>
+{% endfor %}
+</select>
+{{ form_end(form) }}
+</fieldset>
+{% for flash_message in app.session.flashbag.get('notice') %}
+    <div class="flash-notice">
+        {{ flash_message }}
+    </div>
+{% endfor %}
+</div>
+{% endblock %}

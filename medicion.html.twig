@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+{% block title %}Punto de Medicion{% endblock %}
+{% block body%}
+{% include 'menu.html.twig' %}
+{{ parent() }}
+{% block stylesheests %}
+{% endblock %}
+<br>
+<div class="divforms">
+<a class="divbotones" href="{{path ('buscarpland')}}">Disparar Plan</a>
+<a class="divbotones" href="{{path ('plan')}}">Crear Plan</a>
+<br><br><br>
+
+<fieldset >
+<legend><h3>Punto de Medicion</h3></legend>
+Plan N°
+<input type="text" size="10" name="plannumero" id="plannumero" value="{{plannum.numero}}" readonly>
+Estado
+<input type="text" size="10" name="estado" id="estado" value="{{estado.descripcion}}" readonly>
+Titulo
+<input type="text" size="10" name="titulo" id="titulo" value="{{plannum.titulo}}" readonly>
+Tipo
+<input type="text" size="10" name="tipo" id="tipo" value="{{tipo.descripcion}}" readonly>
+Estrategia
+<input type="text" size="10" name="estrategia" id="estrategia" value="{{estrategia.descripcion}}" readonly>
+Salto
+<input type="text" size="10" name="salto" id="salto" value="{{plannum.salto}}" readonly>
+<br>
+Activo Padre
+<input type="text" size="30" name="activop" id="activop" value="{{actp.nombre}}" readonly>
+Activo Hijo
+<input type="text" size="30" name="activoh" id="activoh" value="{{acth.nombre}}" readonly>
+</fieldset>
+
+<fieldset >
+{{ form_start(form, {'action': path ('medicion'), 'method': 'POST'}) }}
+Punto Viejo{{ form_widget(form.puntoviejo, {'attr' : {'value' : pviejo.puntonuevo }}	) }}<br>
+Punto Nuevo{{ form_widget(form.puntonuevo, {'attr' : {'min' : pviejo.puntonuevo + 1, 'max' : 999999 } }	) }}
+{{ form_end(form) }}
+</fieldset>
+{% for flash_message in app.session.flashbag.get('notice') %}
+    <div class="flash-notice">
+        {{ flash_message }}
+    </div>
+{% endfor %}
+</div>
+{% endblock %}
